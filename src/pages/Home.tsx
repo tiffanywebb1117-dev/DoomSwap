@@ -1,12 +1,5 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import LandingPage from "./LandingPage";
 
 export default function Home() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("/marketplace");
-  }, [navigate]);
-
-  return null;
+  return <LandingPage />;
 }

@@ -1,0 +1,113 @@
+.landing-outer {
+  height: 300vh;
+  position: relative;
+}
+
+.landing-sticky {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b0c10;
+}
+
+.landing-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 55% 55% at 50% 50%,
+    rgba(32, 201, 195, 0.2) 0%,
+    rgba(32, 201, 195, 0.06) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.landing-halftone {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(32, 201, 195, 0.07) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+.landing-sticker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  border-radius: 6px;
+  outline: 3px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.95),
+    0 8px 32px rgba(0, 0, 0, 0.6);
+  will-change: transform, opacity;
+  z-index: 5;
+  user-select: none;
+  pointer-events: none;
+}
+
+.landing-copy {
+  position: absolute;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 2rem;
+  opacity: 0;
+  will-change: opacity, transform;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.landing-copy.revealed {
+  pointer-events: auto;
+}
+
+.landing-copy h1 {
+  font-size: clamp(1.45rem, 3.2vw, 2.25rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 60px rgba(32, 201, 195, 0.45);
+}
+
+.landing-copy p {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: #20c9c3;
+  margin: 0 0 2.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.landing-cta {
+  display: inline-block;
+  padding: 0.9rem 2.75rem;
+  background: #20c9c3;
+  color: #0b0c10;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 3px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 0 24px rgba(32, 201, 195, 0.35);
+}
+
+.landing-cta:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 36px rgba(32, 201, 195, 0.55);
+}
