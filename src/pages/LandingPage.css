@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 
-/* ─── Parallax Outer (scroll container) ─── */
+/* ─── Parallax Outer (scroll driver) ─── */
 .parallax-outer {
   height: 300vh;
   position: relative;
@@ -22,37 +22,21 @@
   background: #0b0c10;
 }
 
-/* ─── Photographic Depth Layers ─── */
-.parallax-layer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* Oversized so drift doesn't reveal edges */
-  width: 130%;
-  height: 130%;
-  object-fit: cover;
-  /* transform set inline + updated via JS */
-  transform: translateX(-50%) translateY(-50%);
-  will-change: transform;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* ─── Teal Radial Spotlight ─── */
-.parallax-spotlight {
+/* ─── Background: teal radial spotlight ─── */
+.parallax-bg {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse 60% 60% at 50% 50%,
-    rgba(32, 201, 195, 0.18) 0%,
-    rgba(32, 201, 195, 0.06) 45%,
+    ellipse 58% 58% at 50% 50%,
+    rgba(32, 201, 195, 0.2) 0%,
+    rgba(32, 201, 195, 0.06) 44%,
     transparent 70%
   );
   pointer-events: none;
-  z-index: 6;
+  z-index: 1;
 }
 
-/* ─── Halftone Grit Overlay ─── */
+/* ─── Halftone grit overlay ─── */
 .parallax-halftone {
   position: absolute;
   inset: 0;
@@ -63,17 +47,21 @@
   );
   background-size: 22px 22px;
   pointer-events: none;
-  z-index: 7;
+  z-index: 2;
   mix-blend-mode: screen;
 }
 
-/* ─── Hero Copy ─── */
+/* ─── Hero copy — sits BELOW the image layers ─── */
+/* Text is hidden behind images on load; revealed as they fly away */
 .parallax-copy {
-  position: relative;
+  position: absolute;
   text-align: center;
   max-width: 700px;
   padding: 0 2rem;
-  z-index: 10;
+  z-index: 5;           /* below .parallax-layer */
+  opacity: 0;           /* JS drives this to 1 as layers clear */
+  will-change: opacity, transform;
+  pointer-events: none;
 }
 
 .parallax-copy h1 {
@@ -85,7 +73,7 @@
   letter-spacing: -0.01em;
   text-shadow:
     0 0 60px rgba(32, 201, 195, 0.5),
-    0 2px 16px rgba(0, 0, 0, 0.9);
+    0 2px 20px rgba(0, 0, 0, 0.95);
 }
 
 .parallax-copy p {
@@ -95,7 +83,6 @@
   letter-spacing: 0.13em;
   text-transform: uppercase;
   font-weight: 600;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
 }
 
 .parallax-cta {
@@ -109,6 +96,7 @@
   border-radius: 3px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+  pointer-events: auto;
   transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
   box-shadow: 0 0 28px rgba(32, 201, 195, 0.4);
 }
@@ -117,6 +105,22 @@
   background: #ffffff;
   transform: scale(1.05);
   box-shadow: 0 0 44px rgba(32, 201, 195, 0.6);
+}
+
+/* ─── Image layers — sit ABOVE text ─── */
+.parallax-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  /* transform set by inline style + updated by JS */
+  will-change: transform, opacity;
+  z-index: 10;          /* above .parallax-copy */
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7);
 }
 
 /* ─── Category Grid ─── */
@@ -221,5 +225,8 @@
   .categories-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+  .parallax-layer {
+    width: 200px;
   }
 }
