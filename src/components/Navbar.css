@@ -2,8 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #1e1e1e;
-  border-bottom: 1px solid #5a7d7c;
+  background: rgba(11, 12, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(32, 201, 195, 0.18);
   padding: 0 24px;
 }
 
@@ -26,7 +28,7 @@
 
 .logo-icon {
   font-size: 28px;
-  color: #5a7d7c;
+  color: #20c9c3;
 }
 
 .logo-text {
@@ -58,7 +60,7 @@
 
 .nav-link.active {
   color: #fff;
-  border-bottom-color: #5a7d7c;
+  border-bottom-color: #20c9c3;
 }
 
 .navbar-actions {
@@ -93,7 +95,7 @@
   padding: 10px 20px;
   background: transparent;
   color: #fff;
-  border: 1px solid #5a7d7c;
+  border: 1px solid rgba(32, 201, 195, 0.35);
   border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
