@@ -22,10 +22,10 @@ const LAYERS: LayerCfg[] = [
 const CATEGORIES = [
   { name: "The Culinary Lab",  sub: "Cooking & Baking",            slug: "culinary", image: "/Untitled (54).png" },
   { name: "Pigment & Canvas",  sub: "Painting, Arts & Crafts",     slug: "pigment",  image: "/Untitled (57).png" },
-  { name: "Mud & Glass",       sub: "Pottery, Ceramics & Glass",   slug: "mud",      image: "/Untitled (55).png" },
+  { name: "Mud & Glass",       sub: "Pottery, Ceramics & Glass",   slug: "mud",      image: "/Untitled (56).png" },
   { name: "Yarn & Fiber Arts", sub: "Knitting, Crochet & Tufting", slug: "yarn",     image: "/Untitled (58).png" },
   { name: "Sparks & Wires",    sub: "Tech & Electronics",          slug: "sparks",   image: "/Untitled (59).png" },
-  { name: "Sawdust & Grain",   sub: "Woodworking & Carving",       slug: "sawdust",  image: "/Untitled (60).png" },
+  { name: "Sawdust & Grain",   sub: "Woodworking & Carving",       slug: "sawdust",  image: "/Untitled (61).png" },
 ];
 
 export default function LandingPage() {
