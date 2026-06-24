@@ -11,12 +11,12 @@ interface LayerCfg {
 
 // 6 photographic layers — depth-sorted: slowest = deepest background
 const LAYERS: LayerCfg[] = [
-  { src: "/parallax-1.png", speed: 0.08, opacity: 0.55, blendMode: "luminosity"  },
-  { src: "/parallax-2.png", speed: 0.16, opacity: 0.50, blendMode: "overlay"     },
-  { src: "/parallax-3.png", speed: 0.26, opacity: 0.45, blendMode: "soft-light"  },
-  { src: "/parallax-4.png", speed: 0.38, opacity: 0.40, blendMode: "overlay"     },
-  { src: "/parallax-5.png", speed: 0.50, opacity: 0.38, blendMode: "luminosity"  },
-  { src: "/parallax-6.png", speed: 0.64, opacity: 0.32, blendMode: "soft-light"  },
+  { src: "/1.png", speed: 0.08, opacity: 0.55, blendMode: "luminosity"  },
+  { src: "/2.png", speed: 0.16, opacity: 0.50, blendMode: "overlay"     },
+  { src: "/3.png", speed: 0.26, opacity: 0.45, blendMode: "soft-light"  },
+  { src: "/4.png", speed: 0.38, opacity: 0.40, blendMode: "overlay"     },
+  { src: "/5.png", speed: 0.50, opacity: 0.38, blendMode: "luminosity"  },
+  { src: "/6.png", speed: 0.64, opacity: 0.32, blendMode: "soft-light"  },
 ];
 
 const CATEGORIES = [
